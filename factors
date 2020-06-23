@@ -42,5 +42,5 @@ class factor_file:
             self.factorial(n)
 
 
-if (len(argv) == 2):
-    factor_file(argv[1]).factor_each_n_in_lis()
+for i in range(1, len(argv)):
+    factor_file(argv[i]).factor_each_n_in_lis()
