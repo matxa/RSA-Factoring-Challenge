@@ -32,5 +32,6 @@ def fac_list(ls):
     for i in ls:
         find_and_times(i)
 
+
 if len(argv) == 2:
     fac_list(open_read_file(argv[1]))
