@@ -34,7 +34,7 @@ class factor_file:
         a = 2
         while (s):
             while (a < n):
-                if a == 9:
+                if a == 999:
                     a = m - round(sqrt(m))
                 elif n == ((n // a) * a):
                     print("{}={}*{}".format(n, ((n) // a), a))
