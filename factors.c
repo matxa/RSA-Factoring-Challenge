@@ -5,9 +5,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include <gmp.h>
 
 void file_input(char *filename);
-void factors(size_t n);
+void factors(mpz_t n);
 
 /**
  * file_input - read from file
@@ -18,8 +19,8 @@ void factors(size_t n);
 void file_input(char *filename)
 {
 	char *line = NULL;
-	size_t bsize = 0;
-	long long int line_to_num;
+	mpz_t bsize = 0;
+	mpz_t line_to_num;
 	FILE *fp;
 
 	if (filename == NULL)
@@ -31,7 +32,7 @@ void file_input(char *filename)
 
 	while (getline(&line, &bsize, fp) != -1)
 	{
-		line_to_num = atoll(line);
+		mpz_init_set_str(line_to_num, line, 10);
 		factors(line_to_num);
 	}
 
@@ -45,9 +46,9 @@ void file_input(char *filename)
  * Return: VOID
  */
 
-void factors(size_t n)
+void factors(mpz_t n)
 {
-	size_t i;
+	mpz_t i;
 
 	for (i = 2; i < n; i++)
 	{
@@ -66,9 +67,10 @@ void factors(size_t n)
  * Return: return (0) on success
  */
 
-int main(int i, char **av)
+int main(char **av)
 {
-	file_input(av[1]);
+    if (av[1] != NULL)
+	   file_input(av[1]);
 
-	return (i);
+	return (0);
 }
