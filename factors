@@ -28,22 +28,19 @@ class factor_file:
         """factor each
         n given
         """
-        result = []
-        i = 1
-        m = n
-        if n > 239809320265259:
-            m = round(sqrt(n))
-        while i * i <= m:
-            if n % i == 0:
-                result.append(i)
-                if n // i != i:
-                    result.append((n // i))
-            i += 1
-        if len(result) == 3:
-            print("{}={}*{}".format(result[1], result[2], result[2]))
-            return result
-        print("{}={}*{}".format(result[1], result[3], result[2]))
-        return result
+        m = round(sqrt(n))
+        m2 = 2
+        s = True
+        a = 2
+        while (s):
+            while (a < n):
+                if a == 999:
+                    a = m - round(sqrt(m))
+                elif n == ((n // a) * a):
+                    print("{}={}*{}".format(n, ((n) // a), a))
+                    break
+                a += 1
+            s = False
 
     def factor_each_n_in_lis(self):
         """factor each
