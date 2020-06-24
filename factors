@@ -25,7 +25,7 @@ def find_and_times(n):
         if n == ((n // i) * i) and n % i == 0:
             print("{}={}*{}".format(n, (n // i), i))
             return 0
-    print("{}={}*{}".format(n, (n // i), i))
+    print("{}={}*{}".format(n, (n // i), i+1))
 
 
 def fac_list(ls):
