@@ -25,10 +25,10 @@ def find_and_times(n):
     n given
     """
     for i in range(2, n):
-        # if i > 9:
-        #     n1, n2 = factors(n)[0][1], factors(n)[0][0]
-        #     print("{}={}*{}".format(n, round(n1), n2))
-        #     break
+        if i > 9:
+            n1, n2 = factors(n)[0][1], factors(n)[0][0]
+            print("{}={}*{}".format(n, round(n1), n2))
+            break
         if n == ((n // i) * i):
             print("{}={}*{}".format(n, (n // i), i))
             break
