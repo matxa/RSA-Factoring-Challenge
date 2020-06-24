@@ -4,10 +4,6 @@ from sys import argv
 from math import sqrt
 
 
-def factors(num):
-    return [(x, num / x) for x in range(int(sqrt(num)))[2:] if not num % x]
-
-
 def open_read_file(file_name):
     """read from file
     add to array
@@ -28,7 +24,7 @@ def find_and_times(n):
         if n == ((n // i) * i):
             print("{}={}*{}".format(n, (n // i), i))
             break
-
+            
 
 def fac_list(ls):
     """factor each
